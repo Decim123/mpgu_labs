@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box {
+    width: 400px;
+    background-color: rgba(43, 43, 43, 0.9);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.image-container {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+button:hover {
+    background-color: #555;
+}
+@keyframes jumpUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+@keyframes jumpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+}
+@keyframes moveRight {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+@keyframes moveLeft {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-20px); }
+    100% { transform: translateX(0); }
+}
+.jump-up {
+    animation: jumpUp 0.5s;
+}
+.jump-down {
+    animation: jumpDown 0.5s;
+}
+.move-right {
+    animation: moveRight 0.5s;
+}
+.move-left {
+    animation: moveLeft 0.5s;
+}
+#visualizer-container {
+    width: 100%;
+    height: 150px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+}
+#visualizer {
+    width: 100%;
+    height: 100%;
+}
